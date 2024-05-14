@@ -1,0 +1,166 @@
+@use '../varibles' as *;
+@use '../media' as *;
+
+.filter {
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  &__group {
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+    margin: 0;
+    padding: 0;
+    gap: 12px;
+
+    &_choices {
+      gap: 64px;
+
+      @include mobile {
+        gap: 40px;
+      }
+    }
+  }
+
+  &__radio {
+    appearance: none;
+    position: absolute;
+  }
+
+  &__label {
+    padding: 16px;
+    padding-left: 60px;
+    cursor: pointer;
+    border-radius: 300px;
+    background-color: $white;
+    color: $dark;
+    background-size: 40px;
+    background-position: left 16px center;
+    background-repeat: no-repeat;
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+
+    @include mobile {
+      padding: 10px 12px 10px 40px;
+      background-size: 24px;
+      background-position: left 12px center;
+      min-height: 40px;
+    }
+
+    &_flowers {
+      background-image: url(/img/flowers.png);
+    }
+
+    &_toys {
+      background-image: url(/img/bear-toy.png);
+    }
+
+    &_postcard {
+      background-image: url(/img/postcard.png);
+    }
+
+    &:hover {
+      background-color: $orange;
+      color: $white;
+    }
+  }
+
+  &__radio:focus-visible + &__label {
+    outline: 2px solid $orange;
+    outline-offset: 5px;
+  }
+
+  &__radio:checked + &__label {
+    background-color: $light-orange;
+    color: $white;
+  }
+
+  &__choices {
+    position: relative;
+  }
+
+  &__select {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &:after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: url(/img/arrow.svg) no-repeat center/contain;
+    }
+  }
+
+  &__choices_box {
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 12px;
+    padding: 24px;
+    background-color: $white;
+
+    &_type {
+      padding: 16px;
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__price {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 8px;
+  }
+
+  &__input {
+    &_price {
+      background-color: $bg;
+      border-radius: 32px;
+      border: none;
+      padding: 8px 16px;
+      width: 110px;
+      height: 40px;
+
+      @include mobile {
+        width: 80px;
+      }
+    }
+  }
+
+  &__type {
+    &_list {
+    }
+
+    &_item {
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &_btn {
+      white-space: nowrap;
+
+      &:hover {
+        color: $light-orange;
+      }
+
+      &_active {
+        color: $orange;
+      }
+    }
+  }
+}

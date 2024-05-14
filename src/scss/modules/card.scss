@@ -1,0 +1,86 @@
+@use '../varibles' as *;
+@use '../media' as *;
+
+.card {
+  border-radius: 32px;
+  overflow: hidden;
+  background-color: $white;
+  min-height: 531px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include mobile {
+    min-height: 380px;
+    border-radius: 20px;
+  }
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    height: 359px;
+
+    @include mobile {
+      height: 180px;
+    }
+  }
+
+  &__content {
+    padding: 32px 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px 16px;
+
+    @include mobile {
+      padding: 16px 12px;
+    }
+  }
+
+  &__title {
+    flex-grow: 1;
+    flex-basis: 100%;
+    font-weight: 400;
+    font-size: 18px;
+    color: $dark;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    // margin-top: auto;
+
+    @include mobile {
+      align-items: stretch;
+      flex-direction: column;
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    padding-left: 20px;
+    background-image: url('/img/goods/delivery.svg');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  &__button {
+    border-radius: 32px;
+    padding: 8px 16px;
+    min-width: 120px;
+    background: $light-orange;
+    color: $white;
+
+    &_text {
+      display: none;
+    }
+  }
+
+  &__price {
+  }
+}
