@@ -1,12 +1,12 @@
 import { ListType } from './ListType';
-import { store } from './Store';
+import { productStore } from './Store';
 
 export const initChoicesType = () => {
   const typeChoices = document.querySelector('.filter__choices_type');
   const choicesBox = document.querySelector('.filter__choices_box_type');
 
   const updateTypeChoicesVisibility = () => {
-    const categories = store.getCategories();
+    const categories = productStore.getCategories();
 
     if (categories.size) {
       typeChoices.classList.display = '';
@@ -19,7 +19,7 @@ export const initChoicesType = () => {
     }
   };
 
-  store.subscribe(updateTypeChoicesVisibility);
+  productStore.subscribe(updateTypeChoicesVisibility);
 
   updateTypeChoicesVisibility();
 };
