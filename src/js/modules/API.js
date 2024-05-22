@@ -13,7 +13,7 @@ const formatQueryString = params => {
   return `${searchParams.toString()}`;
 };
 
-export const API_URL = 'http://localhost:3000';
+export const API_URL = 'https://chatter-waiting-path.glitch.me';
 
 export const fetchProducts = async (params = {}) => {
   //   console.log('params: ', params);
